@@ -6,8 +6,8 @@
 
 другая печать дубликатором "ризограф" и цифровым принтером.
 
-важный момент в классах ControllerOfset и ControllerRiso в методе initialize задается путь до ресурсов
+:heavy_exclamation_mark: **важный момент**: в классах ControllerOfset и ControllerRiso в методе initialize задается путь до ресурсов
 
-<span style="color:red">C:\\Users\\yahus\\IdeaProjects\\TypographicCalculator\\src\\main\\resources\\ru\\pvv"</span>
+___"C:\\Users\\yahus\\IdeaProjects\\TypographicCalculator\\src\\main\\resources\\ru\\pvv"___
 
-на других компьютерах, нужно перепрописывать путь в одноименных методах этих 2х классов.
+на других компьютерах, нужно перепрописывать путь в одноименных методах этих 2х классов. :heavy_exclamation_mark:
