@@ -8,6 +8,6 @@
 
 важный момент в классах ControllerOfset и ControllerRiso в методе initialize задается путь до ресурсов
 
-"C:\\Users\\yahus\\IdeaProjects\\TypographicCalculator\\src\\main\\resources\\ru\\pvv"
+<span style="color:red">C:\\Users\\yahus\\IdeaProjects\\TypographicCalculator\\src\\main\\resources\\ru\\pvv"</span>
 
 на других компьютерах, нужно перепрописывать путь в одноименных методах этих 2х классов.
