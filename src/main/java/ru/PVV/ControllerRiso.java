@@ -62,6 +62,7 @@ public class ControllerRiso {
         // Нумерация
         private boolean needNumeration;
         private int countNumbersOnSheet;
+        private double costOfNumberFromTheTariff;
         private double costOfNumber;
         // Листоподборка
         private boolean needCollating;
@@ -89,9 +90,11 @@ public class ControllerRiso {
         // Блоков
         private int countSets;
         //</editor-fold>
+        /*
         private double loadCostOfNumber(String url) throws Exception {
             return (new Workbook(url+"\\data.xls")).getWorksheets().get("тарифы").getCells().get(30,0).getDoubleValue();
         }
+        */
         private void loadPaperAndFormatsAndTariffs(String url) throws Exception {
             // Подключение к хранилищу
             Workbook workbook = new Workbook(url+"\\data.xls");
@@ -128,6 +131,7 @@ public class ControllerRiso {
 
             // Нумерация
             costOfNumber = cellsCostPaper.get(30,0).getDoubleValue();
+            costOfNumberFromTheTariff = costOfNumber;
             // Листоподборка
             costCollatingOneSheet = cellsCostPaper.get(49,0).getDoubleValue();
             // Подложки
@@ -274,12 +278,7 @@ public class ControllerRiso {
                         labelCostOfNumber.setVisible(false);
                         textFieldCostOfNumber.setVisible(false);
                         buttonNumeration.setText("Без нумерации");
-                        try {
-                            costOfNumber = loadCostOfNumber("C:\\Users\\Husim\\IdeaProjects\\TypographicCalculator\\src\\main\\resources\\ru\\pvv");
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            costOfNumber = 0.5;
-                        }
+                        costOfNumber = costOfNumberFromTheTariff;
                     }
                     textFieldCostOfNumber.setText(doubleToString(controller_state.costOfNumber));
                     calculate();
@@ -910,7 +909,7 @@ public class ControllerRiso {
             labelCostOfNumber.setVisible(false);
             textFieldCostOfNumber.setVisible(false);
             buttonNumeration.setText("Без нумерации");
-            controller_state.costOfNumber = controller_state.loadCostOfNumber("C:\\Users\\yahus\\IdeaProjects\\TypographicCalculator\\src\\main\\resources\\ru\\pvv");
+            controller_state.costOfNumber = controller_state.costOfNumberFromTheTariff;
             textFieldCostOfNumber.setText(Double.toString(controller_state.costOfNumber).replaceAll(".",","));
         }
         controller_state.calculate();
