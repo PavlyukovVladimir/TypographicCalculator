@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.PVV.ControllerRiso">
+    <children>
+        <GridPane layoutX="5.0" layoutY="5.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="95.0" prefWidth="95.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="90.0" minWidth="90.0" prefWidth="90.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="55.0" minWidth="55.0" prefWidth="55.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="50.0" prefWidth="50.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="50.0" minWidth="50.0" prefWidth="50.0" />
+            </columnConstraints>
+            <rowConstraints>
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="30.0" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Бумага:" GridPane.rowIndex="9" />
+                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Тип цен:" GridPane.rowIndex="4" />
+                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Вид оплаты:" GridPane.rowIndex="5" />
+                <RadioButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButtonTypeOfPricesRetailSwitch" prefHeight="30.0" prefWidth="102.0" selected="true" text="Розница" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="groupTypeOfPrices" />
+                    </toggleGroup></RadioButton>
+                <RadioButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButtonTypeOfPricesWholesaleSwitch" prefHeight="30.0" prefWidth="98.0" text="Опт" textAlignment="CENTER" toggleGroup="$groupTypeOfPrices" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Макет:" GridPane.rowIndex="3" />
+                <TextField fx:id="textFieldCostOfMakingALayout" alignment="CENTER" onAction="#textFieldCostOfMakingALayoutTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <RadioButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButtonFormOfPaymentCash" prefHeight="30.0" prefWidth="102.0" text="НАЛ" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <toggleGroup>
+                        <ToggleGroup fx:id="groupFormOfPayment" />
+                    </toggleGroup></RadioButton>
+                <RadioButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButtonFormOfPaymentNon_Cash" prefHeight="30.0" prefWidth="102.0" text="БН" toggleGroup="$groupFormOfPayment" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                <RadioButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButtonFormOfPaymentNon_cash_with_vat" prefHeight="30.0" prefWidth="102.0" selected="true" text="БН с НДС" toggleGroup="$groupFormOfPayment" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+                <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#calculateCostOfLayout" text="Калькуляция макета прокатами" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="3" />
+                <Label fx:id="labelCostOfASheet" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Закупочная &#10;цена листа:" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="9">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="textFieldCostOfASheet" alignment="CENTER" onAction="#textFieldCostOfASheetTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="9" />
+                <ComboBox fx:id="comboBoxPaper" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="9" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Нумерация:" GridPane.rowIndex="10" />
+            <Button fx:id="buttonNumeration" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonNumerationClick" text="Без нумерации" GridPane.columnIndex="1" GridPane.rowIndex="10">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Button>
+            <Label fx:id="labelCountNumbersOnSheet" alignment="CENTER" contentDisplay="CENTER" layoutX="379.0" layoutY="190.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Номеров &#10;на листе:" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="10">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldCountNumbersOnSheet" alignment="CENTER" layoutX="434.0" layoutY="160.0" onAction="#textFieldCountNumbersOnSheetTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+            <Label layoutX="10.0" layoutY="130.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Способ печати:" GridPane.rowIndex="6" />
+              <Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" onAction="#switchToPrimary" text="Вернуться в главное меню" GridPane.columnSpan="2">
+               <GridPane.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </GridPane.margin></Button>
+              <Label alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Расчет печати" textAlignment="RIGHT" GridPane.columnIndex="4" GridPane.columnSpan="3">
+                  <font>
+                      <Font size="18.0" />
+                  </font>
+               <GridPane.margin>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </GridPane.margin>
+            </Label>
+            <RadioButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButtonTypeOfPrintRISO" prefHeight="30.0" prefWidth="102.0" selected="true" text="Ризограф" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <toggleGroup>
+                  <ToggleGroup fx:id="groupTypeOfPrint" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButtonTypeOfPrintKONICA" prefHeight="30.0" prefWidth="98.0" text="Коника" textAlignment="CENTER" toggleGroup="$groupTypeOfPrint" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Цветность:" GridPane.rowIndex="7" />
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="2.0" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="7">
+               <children>
+                  <RadioButton fx:id="radioButton1" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButton1Switch" prefWidth="60.0" selected="true" text="1+0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="groupChromaticity" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="radioButton2" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButton2Switch" prefWidth="90.0" text="1+1, 2+0" textAlignment="CENTER" toggleGroup="$groupChromaticity" />
+                  <RadioButton fx:id="radioButton3" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButton3Switch" prefWidth="85.0" text="3+0, 2+1" textAlignment="CENTER" toggleGroup="$groupChromaticity" />
+                  <RadioButton fx:id="radioButton4" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButton4Switch" prefWidth="110.0" text="4+0, 2+2, 3+1" textAlignment="CENTER" toggleGroup="$groupChromaticity" />
+                  <RadioButton fx:id="radioButton5" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButton5Switch" prefWidth="60.0" text="4+1" toggleGroup="$groupChromaticity" />
+               </children>
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+            </HBox>
+            <HBox fillHeight="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="2.0" GridPane.columnSpan="7" GridPane.rowIndex="8">
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+               <children>
+                  <ToggleButton fx:id="toggleButtonA3" maxHeight="30.0" mnemonicParsing="false" onAction="#toggleButtonA3Switch" prefHeight="30.0" selected="true" text="A3-&gt;1">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="groupFormat" />
+                     </toggleGroup>
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="toggleButtonA4" maxHeight="30.0" mnemonicParsing="false" onAction="#toggleButtonA4Switch" prefHeight="30.0" selected="true" text="A4-&gt;2" toggleGroup="$groupFormat">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="toggleButtonA5" maxHeight="30.0" mnemonicParsing="false" onAction="#toggleButtonA5Switch" prefHeight="30.0" text="A5-&gt;4" toggleGroup="$groupFormat">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="toggleButtonEuro" maxHeight="30.0" mnemonicParsing="false" onAction="#toggleButtonAEuroSwitch" prefHeight="30.0" text="Евро-&gt;6" toggleGroup="$groupFormat">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="toggleButtonA6" maxHeight="30.0" mnemonicParsing="false" onAction="#toggleButtonA6Switch" prefHeight="30.0" text="A6-&gt;8" toggleGroup="$groupFormat">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="toggleButtonA7" maxHeight="30.0" mnemonicParsing="false" onAction="#toggleButtonA7Switch" prefHeight="30.0" text="A7-&gt;16" toggleGroup="$groupFormat">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </ToggleButton>
+                  <ToggleButton fx:id="toggleButtonHandleNumberOnTheSheet" maxHeight="30.0" mnemonicParsing="false" onAction="#toggleButtonHandleNumberOnTheSheetSwitch" prefHeight="30.0" text="Количество на листе вручную" toggleGroup="$groupFormat">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                  </ToggleButton>
+                      <TextField fx:id="textFieldNumberOnTheSheet" alignment="CENTER" blendMode="MULTIPLY" maxHeight="28.0" onAction="#textFieldNumberOnTheSheetTextChange" prefHeight="28.0" prefWidth="50.0" />
+               </children>
+            </HBox>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Листоподборка:" GridPane.rowIndex="11" />
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.columnIndex="1" GridPane.rowIndex="11">
+               <children>
+                  <ToggleButton fx:id="toggleButtonCollatingTrue" maxHeight="1.7976931348623157E308" maxWidth="45.0" mnemonicParsing="false" onAction="#collatingTrue" prefWidth="45.0" text="Да">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="groupСollating" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton fx:id="toggleButtonCollatingFalse" maxHeight="1.7976931348623157E308" maxWidth="45.0" mnemonicParsing="false" onAction="#collatingFalse" prefWidth="45.0" selected="true" text="Нет" toggleGroup="$groupСollating" />
+               </children>
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="labelNumberInSet" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Количество &#10;в комплекте:" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="11">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldNumberInSet" alignment="CENTER" onAction="#textFieldNumberInSetTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="11" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Проклейка:" GridPane.rowIndex="13" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Скобы:" GridPane.rowIndex="14" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Пружина:" GridPane.rowIndex="15" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Подложки:" GridPane.rowIndex="12" />
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.columnIndex="1" GridPane.rowIndex="12">
+               <children>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="45.0" mnemonicParsing="false" onAction="#layerTrue" prefWidth="45.0" text="Да">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="groupLayer" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="45.0" mnemonicParsing="false" onAction="#layerFalse" prefWidth="45.0" selected="true" text="Нет" toggleGroup="$groupLayer" />
+               </children>
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+            </HBox>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="1.0" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.halignment="CENTER" GridPane.rowIndex="13">
+               <children>
+                  <ComboBox fx:id="comboBoxLowerLayer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="175.0">
+                     <HBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <Label fx:id="labelCostOfLowerLayer" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="87.0" text="Закупочная &#10;цена листа:">
+                     <HBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textFieldCostOfLowerLayer" alignment="CENTER" blendMode="MULTIPLY" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="87.0" onAction="#textFieldCostOfLowerLayerTextChange">
+                     <HBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.columnIndex="1" GridPane.rowIndex="13">
+               <children>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="45.0" mnemonicParsing="false" onAction="#gluingTrue" prefWidth="45.0" text="Да">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="groupGluing" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton maxHeight="1.7976931348623157E308" maxWidth="45.0" mnemonicParsing="false" onAction="#gluingFalse" prefWidth="45.0" selected="true" text="Нет" toggleGroup="$groupGluing" />
+               </children>
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.columnIndex="1" GridPane.rowIndex="14">
+               <children>
+                  <ToggleButton fx:id="toggleButtonBracketTrue" maxHeight="1.7976931348623157E308" maxWidth="45.0" mnemonicParsing="false" onAction="#bracketTrue" prefWidth="45.0" text="Да">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="groupBrackets" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton fx:id="toggleButtonBracketFalse" maxHeight="1.7976931348623157E308" maxWidth="45.0" mnemonicParsing="false" onAction="#bracketFalse" prefWidth="45.0" selected="true" text="Нет" toggleGroup="$groupBrackets" />
+               </children>
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="2.0" GridPane.columnIndex="1" GridPane.columnSpan="6" GridPane.rowIndex="15">
+               <children>
+                  <ToggleButton fx:id="toggleButtonWithoutSprings" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#withoutSprings" selected="true" text="Без пружин">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="groupSprings" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton fx:id="toggleButtonShortSpring" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#shortSpring" text="Короткая пружина" toggleGroup="$groupSprings" />
+                  <ToggleButton fx:id="toggleButtonLongSpring" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#longSpring" text="Длинная пружина" toggleGroup="$groupSprings" />
+               </children>
+               <padding>
+                  <Insets bottom="1.0" left="2.0" right="2.0" top="1.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="labelNumberOfBracket" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Скоб на &#10;комплект:" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="14">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldNumberOfBracket" alignment="CENTER" onAction="#textFieldNumberOfBracketTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="14" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Листов А3:" GridPane.rowIndex="16" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Блоков:" GridPane.rowIndex="17" />
+            <TextField fx:id="textFieldCountA3" alignment="CENTER" blendMode="MULTIPLY" editable="false" onScroll="#setTextFieldCostToClipboard" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="16" />
+            <TextField fx:id="textFieldCountSets" alignment="CENTER" blendMode="MULTIPLY" editable="false" onScroll="#setTextFieldCostToClipboard" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+            <Label fx:id="labelCostOfNumber" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="за номер:" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="10">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldCostOfNumber" alignment="CENTER" onAction="#textFieldCostOfNumberTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="10" />
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="1.0" GridPane.columnIndex="2" GridPane.columnSpan="5" GridPane.halignment="CENTER" GridPane.rowIndex="12" GridPane.valignment="CENTER">
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+               <children>
+                  <ComboBox fx:id="comboBoxUpperLayer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="175.0">
+                     <HBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <Label fx:id="labelCostOfUpperLayer" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="87.0" text="Закупочная &#10;цена листа:">
+                     <HBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textFieldCostOfUpperLayer" alignment="CENTER" blendMode="MULTIPLY" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minWidth="87.0" onAction="#textFieldCostOfUpperLayerTextChange">
+                     <HBox.margin>
+                        <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="1.0" GridPane.columnSpan="7" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <padding>
+                  <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
+               </padding>
+               <children>
+                      <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Тираж:" />
+                      <TextField fx:id="textFieldEdition" alignment="CENTER" onAction="#textFieldEditionTextChange" prefHeight="40.0" prefWidth="100.0" />
+                      <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Цена:" />
+                      <TextField fx:id="textFieldCost" alignment="CENTER" blendMode="MULTIPLY" editable="false" onScroll="#setTextFieldCostToClipboard" prefHeight="40.0" prefWidth="100.0" />
+                      <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Сумма:" />
+                      <TextField fx:id="textFieldTotalCost" alignment="CENTER" blendMode="MULTIPLY" editable="false" prefHeight="40.0" prefWidth="100.0" />
+               </children>
+            </HBox>
+            </children>
+        </GridPane>
+    </children>
+</Pane>

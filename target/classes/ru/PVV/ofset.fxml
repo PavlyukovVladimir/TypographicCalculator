@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="350.0" prefWidth="534.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.PVV.ControllerOfset">
+   <children>
+        <Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutY="-6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="529.0" text="Расчет офсетной печати" textAlignment="RIGHT">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding></Label>
+        <Button fx:id="ofsetButton1" layoutX="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#switchToPrimary" prefHeight="25.0" prefWidth="163.0" text="Вернуться в главное меню" />
+      <GridPane layoutX="5.0" layoutY="47.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="103.0" minWidth="10.0" prefWidth="79.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="148.0" minWidth="10.0" prefWidth="90.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="117.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="55.0" minWidth="55.0" prefWidth="55.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="50.0" prefWidth="50.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="50.0" prefWidth="50.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Тираж:" GridPane.rowIndex="1" GridPane.rowSpan="2" />
+            <TextField fx:id="textFieldEdition" alignment="CENTER" onAction="#textFieldEditionTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Формат:" GridPane.rowIndex="5" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Бумага:" GridPane.rowIndex="6" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Тип цен:" GridPane.rowIndex="3" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Вид оплаты:" GridPane.rowIndex="4" />
+            <RadioButton fx:id="radioButtonTypeOfPricesRetail" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButtonTypeOfPricesRetailSwitch" prefHeight="30.0" prefWidth="102.0" selected="true" text="Розница" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <toggleGroup>
+                  <ToggleGroup fx:id="groupTypeOfPrices" />
+               </toggleGroup></RadioButton>
+            <RadioButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButtonTypeOfPricesWholesaleSwitch" prefHeight="30.0" prefWidth="98.0" text="Опт" textAlignment="CENTER" toggleGroup="$groupTypeOfPrices" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Макет:" />
+            <TextField fx:id="textFieldCostOfMakingALayout" alignment="CENTER" onAction="#textFieldCostOfMakingALayoutTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="1" />
+            <RadioButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButtonFormOfPaymentCash" prefHeight="30.0" prefWidth="102.0" text="НАЛ" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <toggleGroup>
+                  <ToggleGroup fx:id="groupFormOfPayment" />
+               </toggleGroup></RadioButton>
+            <RadioButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButtonFormOfPaymentNon_Cash" prefHeight="30.0" prefWidth="102.0" text="БН" toggleGroup="$groupFormOfPayment" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <RadioButton fx:id="radioButtonFormOfPaymentNon_cash_with_vat" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#radioButtonFormOfPaymentNon_cash_with_vat" prefHeight="30.0" prefWidth="102.0" selected="true" text="БН с НДС" toggleGroup="$groupFormOfPayment" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Количество:" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Цена:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Сумма:" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+            <TextField fx:id="textFieldCost" alignment="CENTER" blendMode="MULTIPLY" editable="false" onScroll="#setTextFieldCostToClipboard" prefHeight="40.0" prefWidth="100.0" text="1000" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="textFieldTotalCost" alignment="CENTER" blendMode="MULTIPLY" editable="false" prefHeight="40.0" prefWidth="100.0" text="1000" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#calculateCostOfLayout" text="Калькуляция макета прокатами" GridPane.columnIndex="2" GridPane.columnSpan="2" />
+            <Label fx:id="labelNumberOnTheSheet" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="На листе:" GridPane.columnIndex="4" GridPane.rowIndex="5" />
+            <TextField fx:id="textFieldNumberOnTheSheet" alignment="CENTER" onAction="#textFieldNumberOnTheSheetTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="5" />
+            <Label fx:id="labelCostOfASheet" alignment="CENTER" contentDisplay="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Закупочная &#10;цена листа:" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="6">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldCostOfASheet" alignment="CENTER" onAction="#textFieldCostOfASheetTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="6" />
+            <ComboBox fx:id="comboBoxFormat" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="5" />
+            <ComboBox fx:id="comboBoxPaper" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" GridPane.columnIndex="1" GridPane.columnSpan="3" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="5.0" layoutY="257.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="15.0" prefWidth="15.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="15.0" prefWidth="15.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="15.0" prefWidth="15.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="15.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="50.0" prefWidth="50.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="textFieldUpperColourImprints" alignment="CENTER" onAction="#textFieldUpperColourImprintsTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.rowIndex="2" />
+            <TextField fx:id="textFieldUpperBlackImprints" alignment="CENTER" onAction="#textFieldUpperBlackImprintsTextChange" prefHeight="40.0" prefWidth="100.0" text="0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="textFieldLowerColourImprints" alignment="CENTER" onAction="#textFieldLowerColourImprintsTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+            <TextField fx:id="textFieldLowerBlackImprints" alignment="CENTER" onAction="#textFieldLowerBlackImprintsTextChange" prefHeight="40.0" prefWidth="100.0" text="0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clickUpperColour" text="↑Цвет" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clickUpperBlack" text="↑ч/б" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clickLowerColour" text="↑Цвет" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+            <Button alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clickLowerBlack" text="↑ч/б" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+            <Button fx:id="buttonUpperImprints" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clickUpperImprints" text="Прокатов сверху↓" GridPane.columnSpan="3" />
+            <Button fx:id="buttonLowerImprints" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clickLowerImprints" text="Прокатов снизу↓" GridPane.columnIndex="4" GridPane.columnSpan="3" />
+            <Button accessibleRole="DECREMENT_BUTTON" alignment="CENTER_RIGHT" contentDisplay="RIGHT" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clickIncreaseNumberOfPlates" text="↑Плас" textAlignment="RIGHT" GridPane.columnIndex="8" GridPane.rowIndex="1" />
+            <Button accessibleRole="INCREMENT_BUTTON" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#clickDecreaseNumberOfPlates" text="тины↓" GridPane.columnIndex="9" GridPane.rowIndex="1" />
+            <TextField fx:id="textFieldNumberOfPrintingPlates" alignment="CENTER" onAction="#textFieldNumberOfPrintingPlatesTextChange" prefHeight="40.0" prefWidth="100.0" GridPane.columnIndex="8" GridPane.columnSpan="2" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</Pane>
