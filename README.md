@@ -6,7 +6,7 @@
 
 другая печать дубликатором "ризограф" и цифровым принтером.
 
-:heavy_exclamation_mark: **важный момент**: в классах ControllerOfset и ControllerRiso в методе initialize задается путь до ресурсов
+:heavy_exclamation_mark: **важный момент**: в классах ___ControllerOfset___ и ___ControllerRiso___ в методе ___initialize___ задается путь до ресурсов
 
 ___"C:\\Users\\yahus\\IdeaProjects\\TypographicCalculator\\src\\main\\resources\\ru\\pvv"___
 
